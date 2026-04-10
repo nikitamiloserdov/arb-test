@@ -52,7 +52,6 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p reports
-          mkdir -p testops-results
           mkdir -p public/runs/${RUN_ID}
 
           newman run postman/collection.json \
@@ -61,14 +60,25 @@ jobs:
             --delay-request 8000 \
             --reporters cli,htmlextra,junit \
             --reporter-htmlextra-export reports/index.html \
-            --reporter-junit-export testops-results/result.xml
+            --reporter-junit-export reports/newman-report.xml
 
+          # копируем HTML для Pages
           cp reports/index.html public/runs/${RUN_ID}/index.html
+
+      # =========================================================
+      # 📂 Prepare TestOps results
+      # =========================================================
+      - name: Prepare TestOps results
+        if: always()
+        run: |
+          mkdir -p testops-results
+          cp reports/newman-report.xml testops-results/
 
       # =========================================================
       # 📥 Install allurectl
       # =========================================================
       - name: Install allurectl
+        if: always()
         run: |
           curl -o allurectl -L https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64
           chmod +x allurectl
@@ -98,11 +108,11 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: report
+          name: report-${{ env.RUN_ID }}
           path: reports/index.html
 
       # =========================================================
-      # 🚀 Deploy to GitHub Pages
+      # 🚀 Deploy to GitHub Pages (НЕ УДАЛЯЕМ СТАРЫЕ РАНЫ)
       # =========================================================
       - name: Deploy to GitHub Pages
         if: always()
