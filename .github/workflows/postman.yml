@@ -22,3 +22,6 @@ jobs:
             --env-var "mail_domain=${{ secrets.MAIL_DOMAIN }}" \
             --delay-request 3000 \
             --bail
+
+      - name: Debug env
+        run: echo "DOMAIN=$R2U_DOMAIN"      
