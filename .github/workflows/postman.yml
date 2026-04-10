@@ -1,11 +1,13 @@
 name: API tests (Newman)
 
 on:
+  workflow_dispatch:
+
   push:
     branches: [ "main" ]
 
   schedule:
-    - cron: "*/15 * * * *"  # каждые 15 минут
+    - cron: "*/15 * * * *"
 
 jobs:
   newman:
