@@ -38,15 +38,15 @@ jobs:
         run: npm install -g newman newman-reporter-htmlextra
 
       # =========================================================
-      # 🆔 RUN_ID
+      # 🆔 RUN_ID (МСК)
       # =========================================================
       - name: Generate RUN_ID
         run: |
-          RUN_ID=$(date +"%Y-%m-%d_%H-%M-%S")
+          RUN_ID=$(TZ=Europe/Moscow date +"%Y-%m-%d_%H-%M-%S")
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
       # =========================================================
-      # ▶️ Run tests
+      # ▶️ Run collection
       # =========================================================
       - name: Run collection
         continue-on-error: true
@@ -62,7 +62,6 @@ jobs:
             --reporter-htmlextra-export reports/index.html \
             --reporter-junit-export reports/newman-report.xml
 
-          # копируем HTML для Pages
           cp reports/index.html public/runs/${RUN_ID}/index.html
 
       # =========================================================
@@ -112,7 +111,7 @@ jobs:
           path: reports/index.html
 
       # =========================================================
-      # 🚀 Deploy to GitHub Pages (НЕ УДАЛЯЕМ СТАРЫЕ РАНЫ)
+      # 🚀 Deploy to GitHub Pages
       # =========================================================
       - name: Deploy to GitHub Pages
         if: always()
