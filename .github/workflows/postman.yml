@@ -32,10 +32,13 @@ jobs:
           node-version: 20
 
       # =========================================================
-      # 📦 Newman + HTML reporter
+      # 📦 Newman + Allure + HTML
       # =========================================================
-      - name: Install Newman
-        run: npm install -g newman newman-reporter-htmlextra
+      - name: Install Newman + reporters
+        run: |
+          npm install -g newman \
+          newman-reporter-htmlextra \
+          newman-reporter-allure
 
       # =========================================================
       # 🆔 RUN_ID (МСК)
@@ -52,15 +55,16 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p reports
+          mkdir -p allure-results
           mkdir -p public/runs/${RUN_ID}
 
           newman run postman/collection.json \
             --env-var "r2u-domain=${{ secrets.R2U_DOMAIN }}" \
             --env-var "mail_domain=${{ secrets.MAIL_DOMAIN }}" \
             --delay-request 8000 \
-            --reporters cli,htmlextra,junit \
+            --reporters cli,htmlextra,allure \
             --reporter-htmlextra-export reports/index.html \
-            --reporter-junit-export reports/newman-report.xml
+            --reporter-allure-export allure-results
 
           cp reports/index.html public/runs/${RUN_ID}/index.html
 
@@ -71,7 +75,7 @@ jobs:
         if: always()
         run: |
           mkdir -p testops-results
-          cp reports/newman-report.xml testops-results/
+          cp -r allure-results/* testops-results/
 
       # =========================================================
       # 📥 Install allurectl
@@ -111,7 +115,7 @@ jobs:
           path: reports/index.html
 
       # =========================================================
-      # 🚀 Deploy to GitHub Pages
+      # 🚀 Deploy to GitHub Pages (НЕ затирает историю)
       # =========================================================
       - name: Deploy to GitHub Pages
         if: always()
