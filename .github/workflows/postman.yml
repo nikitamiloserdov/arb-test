@@ -1,0 +1,24 @@
+name: Run Postman Tests
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  run-postman:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run tests
+        run: |
+          newman run postman/collection.json \
+            --env-var "r2u-domain=${{ secrets.R2U_DOMAIN }}" \
+            --env-var "mail_domain=${{ secrets.MAIL_DOMAIN }}" \
+            --delay-request 3000 \
+            --bail
