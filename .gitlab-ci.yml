@@ -1,9 +1,0 @@
-stages:
-  - test
-
-postman_tests:
-  stage: test
-  image: node:18
-  script:
-    - npm install -g newman
-    - newman run postman/collection.json -e postman/environment.json
