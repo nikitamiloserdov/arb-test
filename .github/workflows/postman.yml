@@ -60,7 +60,6 @@ jobs:
             --reporter-htmlextra-export reports/index.html \
             --reporter-junit-export testops-results/result.xml
 
-          # копируем HTML для Pages
           cp reports/index.html public/runs/${RUN_ID}/index.html
 
       # =========================================================
@@ -96,7 +95,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: report-${{ env.RUN_ID }}
+          name: report
           path: reports/index.html
 
       # =========================================================
@@ -112,6 +111,8 @@ jobs:
 
           git fetch origin gh-pages || true
           git checkout gh-pages || git checkout --orphan gh-pages
+
+          git rm -rf . || true
 
           mkdir -p runs
           cp -r /tmp/public/runs/${RUN_ID} runs/
