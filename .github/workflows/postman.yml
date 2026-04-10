@@ -14,32 +14,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # =========================================================
       # 📥 Checkout
+      # =========================================================
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 🟢 Node
+      # =========================================================
+      # 🟢 Node.js
+      # =========================================================
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 📦 Newman
+      # =========================================================
+      # 📦 Newman + HTML reporter
+      # =========================================================
       - name: Install Newman
         run: npm install -g newman newman-reporter-htmlextra
 
+      # =========================================================
       # 🆔 RUN_ID
+      # =========================================================
       - name: Generate RUN_ID
         run: |
           RUN_ID=$(date +"%Y-%m-%d_%H-%M-%S")
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
+      # =========================================================
       # ▶️ Run tests
+      # =========================================================
       - name: Run collection
         continue-on-error: true
         run: |
           mkdir -p reports
           mkdir -p testops-results
+          mkdir -p public/runs/${RUN_ID}
 
           newman run postman/collection.json \
             --env-var "r2u-domain=${{ secrets.R2U_DOMAIN }}" \
@@ -49,15 +60,23 @@ jobs:
             --reporter-htmlextra-export reports/index.html \
             --reporter-junit-export testops-results/result.xml
 
+          # копируем HTML для Pages
+          cp reports/index.html public/runs/${RUN_ID}/index.html
+
+      # =========================================================
       # 📥 Install allurectl
+      # =========================================================
       - name: Install allurectl
         run: |
           curl -o allurectl -L https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64
           chmod +x allurectl
           sudo mv allurectl /usr/local/bin/allurectl
 
+      # =========================================================
       # 📊 Upload to Allure TestOps
+      # =========================================================
       - name: Upload to TestOps
+        if: always()
         env:
           TESTOPS_ENDPOINT: ${{ secrets.TESTOPS_ENDPOINT }}
           TESTOPS_TOKEN: ${{ secrets.TESTOPS_TOKEN }}
@@ -70,9 +89,35 @@ jobs:
             --project-id ${TESTOPS_PROJECT_ID} \
             --launch-name "API Run • ${RUN_ID}"
 
-      # 📊 Upload HTML report (GitHub)
+      # =========================================================
+      # 📊 Upload HTML report (artifact)
+      # =========================================================
       - name: Upload HTML report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: report
+          name: report-${{ env.RUN_ID }}
           path: reports/index.html
+
+      # =========================================================
+      # 🚀 Deploy to GitHub Pages
+      # =========================================================
+      - name: Deploy to GitHub Pages
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          cp -r public /tmp/public
+
+          git fetch origin gh-pages || true
+          git checkout gh-pages || git checkout --orphan gh-pages
+
+          mkdir -p runs
+          cp -r /tmp/public/runs/${RUN_ID} runs/
+
+          touch .nojekyll
+
+          git add runs .nojekyll
+          git commit -m "deploy run ${RUN_ID}" || echo "Nothing to commit"
+          git push origin gh-pages
