@@ -19,6 +19,7 @@ jobs:
         run: |
           newman run postman/collection.json \
             --env-var "r2u-domain=${{ secrets.R2U_DOMAIN }}" \
+            --env-var "mail_domain=${{ secrets.MAIL_DOMAIN }}" \
             --delay-request 8000 \
             --bail
 
