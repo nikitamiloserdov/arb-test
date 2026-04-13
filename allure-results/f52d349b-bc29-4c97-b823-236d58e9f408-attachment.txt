@@ -1,1 +1,0 @@
-{"message":"Пользователь уже установил пасскод","errorCode":"USER_ALREADY_SET_PASSCODE"}

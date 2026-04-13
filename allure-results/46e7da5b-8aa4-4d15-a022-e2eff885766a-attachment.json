@@ -1,8 +1,0 @@
-{
-    "access-control-allow-origin": "*",
-    "cache-control": "no-cache, private",
-    "content-type": "application/json",
-    "date": "Mon, 13 Apr 2026 16:14:54 GMT",
-    "server": "Caddy",
-    "content-length": "444"
-}

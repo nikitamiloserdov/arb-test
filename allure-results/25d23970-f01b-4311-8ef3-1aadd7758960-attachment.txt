@@ -1,4 +1,0 @@
-{
-    "sessionId": "182fddbc-a55e-4a05-ac50-0b4e017503e0",
-    "token": "1c651e580ca19dda9541e9dffa7de9d81f1e8faaad0065878334afd3bac1a3b2"    
-}
