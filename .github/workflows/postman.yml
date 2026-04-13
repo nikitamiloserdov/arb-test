@@ -7,7 +7,6 @@ on:
     branches: [ "main" ]
 
   schedule:
-    - cron: "*/15 * * * *"
     - cron: "5,20,35,50 * * * *"
 
 jobs:
@@ -47,7 +46,7 @@ jobs:
       # =========================================================
       - name: Generate RUN_ID
         run: |
-          RUN_ID=$(TZ=Europe/Moscow date +"%Y-%m-%d_%H-%M-%S")
+          RUN_ID=$(TZ=Europe/Moscow date +"%Y-%m-%d_%H-%M-%S-%3N")
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
       # =========================================================
@@ -68,8 +67,13 @@ jobs:
             --reporter-htmlextra-export reports/index.html \
             --reporter-allure-export allure-results \
             --reporter-junit-export reports/newman-report.xml
+            
+          if [ -f reports/index.html ]; then
+            cp reports/index.html public/runs/${RUN_ID}/index.html
+          else
+            echo "<h1>No report generated</h1>" > public/runs/${RUN_ID}/index.html
+          fi
 
-          cp reports/index.html public/runs/${RUN_ID}/index.html
 
       # =========================================================
       # 📂 Prepare TestOps results
@@ -78,7 +82,7 @@ jobs:
         if: always()
         run: |
           mkdir -p testops-results
-          cp -r allure-results/* testops-results/
+          cp -r allure-results/. testops-results/ 2>/dev/null || true
 
       # =========================================================
       # 📥 Install allurectl
