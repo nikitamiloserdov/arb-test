@@ -1,5 +1,0 @@
-{
-  "sessionId": "{{resetPasswordSessionId}}",
-  "resetToken": "{{resetPasswordToken}}",
-  "passcode": "3844"
-}

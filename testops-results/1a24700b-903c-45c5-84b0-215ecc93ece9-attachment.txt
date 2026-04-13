@@ -1,3 +1,0 @@
-{
-    "email": "test1764@deltajohnsons.com"    
-}
