@@ -62,11 +62,11 @@ jobs:
           newman run postman/collection.json \
             --env-var "r2u-domain=${{ secrets.R2U_DOMAIN }}" \
             --env-var "mail_domain=${{ secrets.MAIL_DOMAIN }}" \
-            --delay-request 8000,junit \
-            --reporters cli,htmlextra,allure \
+            --delay-request 8000 \
+            --reporters cli,htmlextra,allure,junit \
             --reporter-htmlextra-export reports/index.html \
-            --reporter-allure-export allure-results \ 
-            --reporter-junit-export reports/newman-report.xml
+            --reporter-allure-export allure-results \
+             --reporter-junit-export reports/newman-report.xml
 
           cp reports/index.html public/runs/${RUN_ID}/index.html
 
