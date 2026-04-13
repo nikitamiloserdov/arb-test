@@ -62,10 +62,11 @@ jobs:
           newman run postman/collection.json \
             --env-var "r2u-domain=${{ secrets.R2U_DOMAIN }}" \
             --env-var "mail_domain=${{ secrets.MAIL_DOMAIN }}" \
-            --delay-request 8000 \
+            --delay-request 8000,junit \
             --reporters cli,htmlextra,allure \
             --reporter-htmlextra-export reports/index.html \
-            --reporter-allure-export allure-results
+            --reporter-allure-export allure-results \ 
+            --reporter-junit-export reports/newman-report.xml
 
           cp reports/index.html public/runs/${RUN_ID}/index.html
 
@@ -137,3 +138,31 @@ jobs:
           git add runs .nojekyll
           git commit -m "deploy run ${RUN_ID}" || echo "Nothing to commit"
           git push origin gh-pages
+
+
+      # =========================================================
+      # 🐍 Setup Python
+      # =========================================================
+      - name: Setup Python
+        if: always()
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        if: always()
+        run: pip install requests
+
+      # =========================================================
+      # 📩 Telegram
+      # =========================================================
+      - name: Send Telegram report
+        if: always()
+        env:
+          TGBOT: ${{ secrets.TGBOT }}
+          CHATID: ${{ secrets.CHATID }}
+          RUN_ID: ${{ env.RUN_ID }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          TESTOPS_ENDPOINT: ${{ secrets.TESTOPS_ENDPOINT }}
+          TESTOPS_PROJECT_ID: ${{ secrets.TESTOPS_PROJECT_ID }}
+        run: python scripts/send_telegram_report.py
