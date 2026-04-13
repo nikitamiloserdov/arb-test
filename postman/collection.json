@@ -7,7 +7,7 @@
   },
   "item": [
     {
-      "name": "Rates Copy",
+      "name": "Rates",
       "item": [
         {
           "name": "Get usdt to rub rate",
@@ -64,13 +64,16 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const random = Math.floor(Math.random() * 100000)\r",
+                  "const random = Math.floor(Math.random() * 1000)\r",
+                  "const timestamp = Date.now()\r",
                   "\r",
-                  "const email = `test${random}@${pm.environment.get(\"mail_domain\")}`\r",
+                  "const email = `test${timestamp}_${random}@${pm.environment.get(\"mail_domain\")}`\r",
                   "const password = \"123456\"\r",
                   "\r",
                   "pm.environment.set(\"mail_address\", email)\r",
-                  "pm.environment.set(\"mail_password\", password)"
+                  "pm.environment.set(\"mail_password\", password)\r",
+                  "\r",
+                  "console.log(\"EMAIL:\", email)"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -126,6 +129,19 @@
                 "exec": [
                   "pm.test(\"Status code is 200 or 201\", function () {\r",
                   "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.sendRequest(\"https://postman-echo.com/delay/3\", function (err, res) {\r",
+                  "    console.log(\"Waited 3 seconds\");\r",
                   "});"
                 ],
                 "type": "text/javascript",
@@ -526,13 +542,16 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const random = Math.floor(Math.random() * 100000)\r",
+                  "const random = Math.floor(Math.random() * 1000)\r",
+                  "const timestamp = Date.now()\r",
                   "\r",
-                  "const email = `test${random}@${pm.environment.get(\"mail_domain\")}`\r",
+                  "const email = `test${timestamp}_${random}@${pm.environment.get(\"mail_domain\")}`\r",
                   "const password = \"123456\"\r",
                   "\r",
                   "pm.environment.set(\"mail_address\", email)\r",
-                  "pm.environment.set(\"mail_password\", password)"
+                  "pm.environment.set(\"mail_password\", password)\r",
+                  "\r",
+                  "console.log(\"EMAIL:\", email)"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -588,6 +607,19 @@
                 "exec": [
                   "pm.test(\"Status code is 200 or 201\", function () {\r",
                   "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.sendRequest(\"https://postman-echo.com/delay/3\", function (err, res) {\r",
+                  "    console.log(\"Waited 3 seconds\");\r",
                   "});"
                 ],
                 "type": "text/javascript",
@@ -1319,13 +1351,16 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const random = Math.floor(Math.random() * 100000)\r",
+                  "const random = Math.floor(Math.random() * 1000)\r",
+                  "const timestamp = Date.now()\r",
                   "\r",
-                  "const email = `test${random}@${pm.environment.get(\"mail_domain\")}`\r",
+                  "const email = `test${timestamp}_${random}@${pm.environment.get(\"mail_domain\")}`\r",
                   "const password = \"123456\"\r",
                   "\r",
                   "pm.environment.set(\"mail_address\", email)\r",
-                  "pm.environment.set(\"mail_password\", password)"
+                  "pm.environment.set(\"mail_password\", password)\r",
+                  "\r",
+                  "console.log(\"EMAIL:\", email)"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -1381,6 +1416,19 @@
                 "exec": [
                   "pm.test(\"Status code is 200 or 201\", function () {\r",
                   "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.sendRequest(\"https://postman-echo.com/delay/3\", function (err, res) {\r",
+                  "    console.log(\"Waited 3 seconds\");\r",
                   "});"
                 ],
                 "type": "text/javascript",
@@ -2440,13 +2488,24 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const random = Math.floor(Math.random() * 100000)\r",
+                  "//const random = Math.floor(Math.random() * 100000)\r",
                   "\r",
-                  "const email = `test${random}@${pm.environment.get(\"mail_domain\")}`\r",
+                  "//const email = `test${random}@${pm.environment.get(\"mail_domain\")}`\r",
+                  "//const password = \"123456\"\r",
+                  "\r",
+                  "//pm.environment.set(\"mail_address\", email)\r",
+                  "//pm.environment.set(\"mail_password\", password)\r",
+                  "\r",
+                  "const random = Math.floor(Math.random() * 1000)\r",
+                  "const timestamp = Date.now()\r",
+                  "\r",
+                  "const email = `test${timestamp}_${random}@${pm.environment.get(\"mail_domain\")}`\r",
                   "const password = \"123456\"\r",
                   "\r",
                   "pm.environment.set(\"mail_address\", email)\r",
-                  "pm.environment.set(\"mail_password\", password)"
+                  "pm.environment.set(\"mail_password\", password)\r",
+                  "\r",
+                  "console.log(\"EMAIL:\", email)"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -2502,6 +2561,19 @@
                 "exec": [
                   "pm.test(\"Status code is 200 or 201\", function () {\r",
                   "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.sendRequest(\"https://postman-echo.com/delay/3\", function (err, res) {\r",
+                  "    console.log(\"Waited 3 seconds\");\r",
                   "});"
                 ],
                 "type": "text/javascript",
