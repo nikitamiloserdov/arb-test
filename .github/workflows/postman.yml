@@ -16,6 +16,7 @@ jobs:
 
     permissions:
       contents: write
+      actions: write
 
     steps:
       # =========================================================
@@ -66,7 +67,7 @@ jobs:
             --reporters cli,htmlextra,allure,junit \
             --reporter-htmlextra-export reports/index.html \
             --reporter-allure-export allure-results \
-             --reporter-junit-export reports/newman-report.xml
+            --reporter-junit-export reports/newman-report.xml
 
           cp reports/index.html public/runs/${RUN_ID}/index.html
 
@@ -105,6 +106,8 @@ jobs:
           allurectl upload testops-results \
             --project-id ${TESTOPS_PROJECT_ID} \
             --launch-name "API Run • ${RUN_ID}"
+
+          echo "ALLURE_LAUNCH_URL=${TESTOPS_ENDPOINT}/project/${TESTOPS_PROJECT_ID}/launches" >> $GITHUB_ENV
 
       # =========================================================
       # 📊 Upload HTML report (artifact)
@@ -165,4 +168,5 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           TESTOPS_ENDPOINT: ${{ secrets.TESTOPS_ENDPOINT }}
           TESTOPS_PROJECT_ID: ${{ secrets.TESTOPS_PROJECT_ID }}
+          ALLURE_LAUNCH_URL: ${{ env.ALLURE_LAUNCH_URL }}
         run: python scripts/send_telegram_report.py
