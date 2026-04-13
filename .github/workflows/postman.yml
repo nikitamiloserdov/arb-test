@@ -156,20 +156,21 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-
+      
           cp -r public /tmp/public
-
+      
           git fetch origin gh-pages || true
           git checkout gh-pages || git checkout --orphan gh-pages
-
+      
           mkdir -p runs
-
-          cp -r /tmp/public/runs/${RUN_ID} runs/${RUN_ID} || echo "Copy failed"
-          
-          ls -la runs/${RUN_ID}
-
+      
+          # Копируем ТОЛЬКО нужную папку
+          cp -r /tmp/public/runs/${RUN_ID} runs/
+      
           touch .nojekyll
-          
-          git add runs .
+      
+          # ВАЖНО: добавляем только нужное
+          git add runs .nojekyll
+      
           git commit -m "deploy run ${RUN_ID}" || echo "Nothing to commit"
           git push origin gh-pages
