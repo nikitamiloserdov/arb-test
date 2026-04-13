@@ -1,0 +1,13 @@
+{
+    "x-device-session-token": "299756dd78bbaadd4589aabbf6e5920ca2be9e61575833bb76205faf9d8c5866",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJydWIydXNkdC5hY2NvdW50LXNlcnZpY2UiLCJhdWQiOiJydWIydXNkdCIsInN1YiI6ImZhNDJiY2I1LTZiOWYtNDExMi1hNDA5LTlkZjdlOTM5Mjk3YSIsImxvYSI6Mywic2NvcGUiOlsicmVndWxhcjphbGwiXSwianRpIjoiZGNmOGNjZDctZGVjOS00MmJhLThlNzktOGIwMmE3MTk2MDE0IiwidXNlclR5cGUiOiJSRUdVTEFSIiwicm9sZSI6bnVsbCwiYXBwcyI6bnVsbCwiaWF0IjoxNzc2MDk3MTMwLCJleHAiOjE3NzYwOTc3MzB9.kRnZq1lC6GB0ZrRAUjCNMXs0oY_K4WwvKq8sfukHAjs",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "291877f5-8185-47e5-82b9-b74574cfeab4",
+    "Host": "account-test.rub2usdt.metalamp.io",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "385"
+}

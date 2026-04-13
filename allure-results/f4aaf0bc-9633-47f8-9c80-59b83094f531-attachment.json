@@ -1,0 +1,12 @@
+{
+    "x-device-session-token": "a06ed2bbfacca3d47d04c31d9902a0da85ec7dc05aee70b976f585f73fd2aac1",
+    "Content-Type": "application/json",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "f4d527cf-7b05-4669-b8ea-04755ba7a24d",
+    "Host": "account-test.rub2usdt.metalamp.io",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "24"
+}

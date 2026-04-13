@@ -1,0 +1,10 @@
+{
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Expose-Headers": "Authorization,x-device-session-token",
+    "Content-Length": "210",
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Mon, 13 Apr 2026 16:18:42 GMT",
+    "Etag": "W/\"d2-okIZNGsM9/I/cfPjtAtZk0CVkl0\"",
+    "Vary": "Origin",
+    "X-Powered-By": "Express"
+}

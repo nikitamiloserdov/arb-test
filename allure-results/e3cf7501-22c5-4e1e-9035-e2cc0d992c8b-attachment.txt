@@ -1,0 +1,1 @@
+{"@context":"\/contexts\/Domain","@id":"\/domains","@type":"hydra:Collection","hydra:totalItems":1,"hydra:member":[{"@id":"\/domains\/69d3bd9d6ebaa58a0b42fdf9","@type":"Domain","id":"69d3bd9d6ebaa58a0b42fdf9","domain":"deltajohnsons.com","isActive":true,"isPrivate":false,"createdAt":"2026-04-06T00:00:00+00:00","updatedAt":"2026-04-06T00:00:00+00:00"}]}

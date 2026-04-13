@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="R2U Copy 3" tests="57" time="14.921">
+  <testsuite name="Flows / Ф1.Регистрация пользователя через почту / Ф1.1Создание почты" id="5470e48f-f7af-43d7-801d-dc31c02a24cb" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.767"/>
+  <testsuite name="Flows / Ф1.Регистрация пользователя через почту / Ф1.2Проверка данных почты" id="43c3fd31-b6d8-4d28-88d7-2f39d5b329f8" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.228"/>
+  <testsuite name="Flows / Ф1.Регистрация пользователя через почту / Ф1.3Получение токена почты" id="7a9f2236-385e-4d85-84cb-7a9356d88023" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.240"/>
+  <testsuite name="Flows / Ф1.Регистрация пользователя через почту / Ф1.4Отправка письма для регистрации" id="9b5065ef-c4a7-4370-a51f-c32ff129a229" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.934"/>
+  <testsuite name="Flows / Ф1.Регистрация пользователя через почту / Ф1.5Проверка всех писем" id="6aaacacc-c3b7-4bae-a09e-ea07e13e096e" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.154"/>
+  <testsuite name="Flows / Ф1.Регистрация пользователя через почту / Ф1.6Данные в письме о регистрации" id="ab9f119b-22b0-4bd9-bd59-d3f6ad81d17c" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.153"/>
+  <testsuite name="Flows / Ф1.Регистрация пользователя через почту / Ф1.7Переход по ссылке регистрации" id="4b877618-0275-4f8a-8370-213eb5961419" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.202"/>
+  <testsuite name="Flows / Ф1.Регистрация пользователя через почту / Ф1.8Создание Пасскода" id="a1b2749a-85a1-4e14-99b2-656cf9eac757" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.373"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Ф1.1Создание почты" id="ea6d7489-a617-4738-a536-14613ac116b3" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.157"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Ф1.2Проверка данных почты" id="85571e9f-4ef2-4b74-be76-5a7b12c89c7d" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.243"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Ф1.3Получение токена почты" id="fd230de6-05e3-4602-aff3-819f20d6a0fa" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.233"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Ф1.4Отправка письма для регистрации" id="093e7c37-a936-43ba-a85e-4297e335239f" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.199"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Ф1.5Проверка всех писем" id="74dab040-75ac-4a7f-84c6-f042dff1a090" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.155"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Ф1.6Данные в письме о регистрации" id="e98a2af4-0b72-4dda-9450-bd13cabc5aed" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.162"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Ф1.7Переход по ссылке регистрации" id="c2a6ad51-992b-4a86-af34-0eb30df86d9e" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.201"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Ф1.8Создание Пасскода" id="8304bdcb-6157-4e8e-a3f1-61121808689d" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.418"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Выход с аккаунта Copy 2" id="e6f36953-db37-4ad3-ad88-0743d761a3d5" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.190"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Отправка письма авторизации Copy" id="3b4c5095-7dc0-424d-a73b-56fde0fe8fc1" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.190"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Проверка всех писем Copy" id="5aa1feba-0d31-40be-ac3a-14165ac47568" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.157"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Данные в письме об авторизации Copy" id="0331e1ff-1c40-4234-a136-942d9c1a57fb" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.151"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Переход по ссылке авторизации Copy" id="bb01be50-4045-4e88-9114-db41c99805ec" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.201"/>
+  <testsuite name="Flows / Ф2.Авторизация пользователя через почту / Вход с новым Пасскодом Copy" id="e47134d3-01f9-4a7f-89cb-46627f0d4520" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.382"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Создание почты" id="a023a60c-accb-4135-aef9-66856815cf5f" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.155"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Проверка данных почты" id="5f988c85-ed84-49cf-b2b9-4264643d26ea" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.230"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Получение токена почты" id="c20505b7-4bf3-4d1e-983b-86364cda4926" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.242"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Отправка письма для регистрации" id="e9de6c22-4ebc-4544-83b9-d65eb3625c12" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.195"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Проверка всех писем" id="7a03e19a-d097-4d05-9991-76791e767e78" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.148"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Данные в письме о регистрации" id="a7db0725-d775-4b04-8029-c94302e12122" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.154"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Переход по ссылке регистрации" id="c7a7cb5b-3b67-4de2-914e-8044a325b2d9" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.205"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Создание Пасскода" id="1068712a-a9d8-4ff8-9e4b-eb46b9222caa" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.361"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Смена пасскода через Профиль" id="54f421b6-0cd4-4749-8fb3-7e2f1b113d6d" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.200"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Проверка данных почты" id="6b06c6f6-b145-44f6-97ed-12041b5b607b" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.148"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Данные письма о смене Пасскода" id="d253c483-cb5d-4fe7-a2c9-ca99e479cc89" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.146"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Переход по ссылке смены Пасскода" id="2e22374b-9299-4d43-94da-8d8366dd2cbc" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.197"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Создание нового Пасскода" id="03c72a34-dbf4-41d8-ab23-8926d992ad00" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.348"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Выход с аккаунта" id="672047af-4eaf-4e23-b7e8-ec83a82c8b88" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.192"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Отправка письма авторизации" id="7197a2ca-caf7-46ba-b1aa-71af8001ef01" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.201"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Проверка всех писем" id="090aa0bc-9ab1-4a93-9a6a-5f4f60edcbec" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.153"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Данные в письме об авторизации" id="e53b5ffc-b784-4fd7-aee6-49546c485fb1" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.155"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Переход по ссылке авторизации" id="0adaffea-d8f0-4002-a48b-ea826e72f753" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.195"/>
+  <testsuite name="Flows / Флоу смены пасскода через Профиль / Вход с новым Пасскодом" id="41532970-5ff6-4023-b8df-c7a8f062bafe" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.358"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.1Создание почты" id="1a38cf00-1a59-41e5-a4a8-d548507e9e86" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.147"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.2Проверка данных почты" id="bb7cdc55-adee-4a10-91aa-b2a4bea1934c" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.157"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.3Получение токена почты" id="381ea6e7-9148-4089-b0a6-1ba8ce7e2962" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.215"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.4Отправка письма для регистрации" id="0a8c20d1-b1a4-411e-b92b-d587a6dffbc8" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.197"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.5Проверка всех писем" id="815fa424-9947-4d61-b26b-84f3314a05d5" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="2" time="0.158">
+    <system-err><![CDATA[Iteration: 0
+
+---
+testScriptError: Cannot read properties of undefined (reading '0')
+---
+Iteration: 0
+
+---
+testScriptError: Cannot read properties of undefined (reading '0')
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.6Данные в письме о регистрации" id="655805b1-2d31-46c1-bb29-cdccd35c790a" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="1" time="0.150">
+    <system-err><![CDATA[Iteration: 0
+
+---
+testScriptError: Cannot read properties of undefined (reading 'match')
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.7Переход по ссылке регистрации" id="8c545e87-46bf-42c0-9804-3fbce2136ff6" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.184"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф1.8Создание Пасскода" id="731c6860-01f1-4ecd-be93-d573f7386388" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.189"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Выход с аккаунта Copy" id="b5c82258-33d2-40a1-a848-182f0a6e6e18" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.192"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.9Запрос восстановление Пасскода" id="73b590f2-a972-4861-9652-4c0de505c1b1" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.183"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.10Проверка всех писем" id="ab4fac87-3b1b-427f-bbe3-5ceeb7bce940" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="2" time="0.142">
+    <system-err><![CDATA[Iteration: 0
+
+---
+testScriptError: Cannot read properties of undefined (reading 'find')
+---
+Iteration: 0
+
+---
+testScriptError: Cannot read properties of undefined (reading 'find')
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.11Данные в письме о восстановлении Пасскода" id="40e4d4fa-007d-4b1b-b1b5-f9d4881038f1" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="1" time="0.142">
+    <system-err><![CDATA[Iteration: 0
+
+---
+testScriptError: Cannot read properties of undefined (reading 'match')
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.12Перед по ссылке восстановления Пасскода" id="14de135e-74dc-4236-b5a8-e7c38bb19fab" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.182"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.13Создание нового Пасскода" id="92969be5-cc05-44f5-b429-67ad95e2485f" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.185"/>
+  <testsuite name="Flows / Ф3.Восстановление забытого Пасскода / Ф3.14Авторизация с новым Пасскодом" id="31525845-cdb0-4a7a-8d18-29b0a2475792" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.184"/>
+  <testsuite name="Rates Copy / Get usdt to rub rate" id="c875502c-7e1c-4780-bd35-fdc847da2504" timestamp="2026-04-13T16:14:29.666Z" tests="0" failures="0" errors="0" time="0.829"/>
+</testsuites>

@@ -1,0 +1,16 @@
+{
+    "accept-patch": "application/merge-patch+json, application/vnd.api+json",
+    "access-control-allow-origin": "*",
+    "cache-control": "no-cache, private",
+    "content-location": "/messages/69dd168ab640b14206dae08a",
+    "content-type": "application/ld+json; charset=utf-8",
+    "date": "Mon, 13 Apr 2026 16:15:23 GMT",
+    "etag": "\"91ac0dca9b009ab03c3eac7c60549060\"",
+    "link": "<https://mercure.mail.tm/.well-known/mercure>; rel=\"mercure\"",
+    "ratelimit-policy": "30; w=60",
+    "server": "Caddy",
+    "vary": "Origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "deny",
+    "content-length": "1813"
+}

@@ -1,0 +1,1 @@
+{"@context":"\/contexts\/Account","@id":"\/accounts\/69dd1676c8e9a776700def67","@type":"Account","id":"69dd1676c8e9a776700def67","address":"test918@deltajohnsons.com","quota":40000000,"used":0,"isDisabled":false,"isDeleted":false,"createdAt":"2026-04-13T16:14:46+00:00","updatedAt":"2026-04-13T16:14:46+00:00"}

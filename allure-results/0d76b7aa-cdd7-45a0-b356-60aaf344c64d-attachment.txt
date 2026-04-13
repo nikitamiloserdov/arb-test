@@ -1,0 +1,1 @@
+{"sessionId":"98bbde8c-cb1c-44b6-a2a5-122b42035262","userId":"831b62f1-a4cf-450d-ac58-e059d4a5c950","deviceSessionToken":"a06ed2bbfacca3d47d04c31d9902a0da85ec7dc05aee70b976f585f73fd2aac1","flow":"registration"}
