@@ -163,10 +163,13 @@ jobs:
           git checkout gh-pages || git checkout --orphan gh-pages
 
           mkdir -p runs
-          cp -r /tmp/public/runs/${RUN_ID} runs/
+
+          cp -r /tmp/public/runs/${RUN_ID} runs/${RUN_ID} || echo "Copy failed"
+          
+          ls -la runs/${RUN_ID}
 
           touch .nojekyll
-
-          git add runs .nojekyll
+          
+          git add runs .
           git commit -m "deploy run ${RUN_ID}" || echo "Nothing to commit"
           git push origin gh-pages
