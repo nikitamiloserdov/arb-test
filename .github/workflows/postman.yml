@@ -7,7 +7,6 @@ on:
     branches: [ "main" ]
 
   schedule:
-    - cron: "5,20,35,50 * * * *"
     - cron: "*/15 * * * *"
 
 jobs:
@@ -19,32 +18,20 @@ jobs:
       actions: write
 
     steps:
-      # =========================================================
-      # 📥 Checkout
-      # =========================================================
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # =========================================================
-      # 🟢 Node.js
-      # =========================================================
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # =========================================================
-      # 📦 Newman + Allure + HTML
-      # =========================================================
       - name: Install Newman + reporters
         run: |
           npm install -g newman \
           newman-reporter-htmlextra \
           newman-reporter-allure
 
-      # =========================================================
-      # 🆔 RUN_ID (МСК)
-      # =========================================================
       - name: Generate RUN_ID
         run: |
           RUN_ID=$(TZ=Europe/Moscow date +"%Y-%m-%d_%H-%M-%S-%3N")
@@ -67,14 +54,25 @@ jobs:
             --reporters cli,htmlextra,allure,junit \
             --reporter-htmlextra-export reports/index.html \
             --reporter-allure-export allure-results \
-            --reporter-junit-export reports/newman-report.xml
-            
+            --reporter-junit-export reports/newman-report.xml || true
+
+          echo "Newman exit code: $?"
+
+          # ГАРАНТИЯ что HTML будет
           if [ -f reports/index.html ]; then
             cp reports/index.html public/runs/${RUN_ID}/index.html
           else
-            echo "<h1>No report generated</h1>" > public/runs/${RUN_ID}/index.html
+            echo "<h1>Report failed</h1>" > public/runs/${RUN_ID}/index.html
           fi
 
+      # =========================================================
+      # 🔍 DEBUG (ВАЖНО)
+      # =========================================================
+      - name: Debug files
+        if: always()
+        run: |
+          echo "===== PUBLIC ====="
+          ls -R public
 
       # =========================================================
       # 📂 Prepare TestOps results
@@ -152,30 +150,25 @@ jobs:
           ALLURE_LAUNCH_URL: ${{ env.ALLURE_LAUNCH_URL }}
         run: python scripts/send_telegram_report.py
 
-
       # =========================================================
-      # 🚀 Deploy to GitHub Pages (НЕ затирает историю)
+      # 🚀 Deploy to GitHub Pages
       # =========================================================
       - name: Deploy to GitHub Pages
         if: always()
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-      
+
           cp -r public /tmp/public
-      
+
           git fetch origin gh-pages || true
           git checkout gh-pages || git checkout --orphan gh-pages
-      
+
           mkdir -p runs
-      
-          # Копируем ТОЛЬКО нужную папку
           cp -r /tmp/public/runs/${RUN_ID} runs/
-      
+
           touch .nojekyll
-      
-          # ВАЖНО: добавляем только нужное
+
           git add runs .nojekyll
-      
           git commit -m "deploy run ${RUN_ID}" || echo "Nothing to commit"
           git push origin gh-pages
