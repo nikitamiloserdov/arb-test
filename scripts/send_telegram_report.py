@@ -11,13 +11,24 @@ ALLURE_LAUNCH_URL = os.environ.get("ALLURE_LAUNCH_URL")
 
 REPORT_PATH = "reports/newman-report.xml"
 
-# --- Parse JUnit ---
+# --- Parse JUnit (FIXED) ---
 tree = ET.parse(REPORT_PATH)
 root = tree.getroot()
 
-tests = int(root.attrib.get("tests", 0))
-failures = int(root.attrib.get("failures", 0))
-errors = int(root.attrib.get("errors", 0))
+tests = 0
+failures = 0
+errors = 0
+
+# FIX: корректно обрабатываем testsuites/testsuites
+if root.tag == "testsuites":
+    for suite in root.findall("testsuite"):
+        tests += int(suite.attrib.get("tests", 0))
+        failures += int(suite.attrib.get("failures", 0))
+        errors += int(suite.attrib.get("errors", 0))
+else:
+    tests = int(root.attrib.get("tests", 0))
+    failures = int(root.attrib.get("failures", 0))
+    errors = int(root.attrib.get("errors", 0))
 
 failed = failures + errors
 passed = tests - failed
